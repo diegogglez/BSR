@@ -2,3 +2,12 @@ ion-content {
   --background: #132226;
   --color: #fff;
 }
+
+.court {
+  width: 100%;
+  height: 70%;
+  outline: 1px solid red;
+  background-image: url("../../../assets/img/court-template-03.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
