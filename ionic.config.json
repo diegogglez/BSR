@@ -1,0 +1,7 @@
+{
+  "name": "BSR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
