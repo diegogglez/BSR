@@ -4,10 +4,62 @@ ion-content {
 }
 
 .court {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 86px 0px 32px;
   width: 100%;
-  height: 70%;
+  max-width: 390px;
+  height: 550px;
   outline: 1px solid red;
   background-image: url("../../../assets/img/court-template-03.svg");
   background-repeat: no-repeat;
   background-position: center;
-}
+
+  button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px solid #1D7773;
+  }
+
+    .drill-container-1, .drill-container-2 {
+      outline: 1px solid red;
+      height: 100%;
+    }
+
+    .drill-container-1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 130px;
+
+      .column-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .drill-container-2 {
+      width: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 55px 0px 55px 0px;
+    }
+
+    .two-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      height: 200px;
+      outline: 1px solid red;
+    }
+  }
