@@ -1,80 +1,13 @@
 <ion-content [fullscreen]="true">
-  <div class="w-full h-full flex justify-center items-end border border-white">
-    <form 
-      [formGroup]="practiceForm" 
-      class="court"
-      (ngSubmit)="onSubmit()">
-        <div class="drill-container-1">
-          <select formControlName="three3">
-            <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-            </option>
-          </select>
-          <div class="column-container">
-            <select formControlName="three4">
-              <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-              </option>
-            </select>
-            <div class="two-container">
-              <select formControlName="two4">
-                <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-                </option>
-              </select>
-              <select formControlName="two3">
-                <option 
-                  *ngFor="let item of drillShootsArr"
-                  value="{{item}}">{{item}}
-                </option>
-              </select>
-              <select formControlName="two2">
-                <option 
-                  *ngFor="let item of drillShootsArr"
-                  value="{{item}}">{{item}}
-                </option>
-              </select>
-            </div>
-            <select formControlName="three2">
-              <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-              </option>
-            </select>
-          </div>
-        </div>
-        <div class="drill-container-2">
-          <select formControlName="three5">
-            <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-            </option>
-          </select>
-          <div class="two-container">
-            <select formControlName="two5">
-              <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-              </option>
-            </select>
-            <button type="submit">submit</button>
-            <select formControlName="two1">
-              <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-              </option>
-            </select>
-          </div>
-          <select formControlName="three1">
-            <option 
-                *ngFor="let item of drillShootsArr"
-                value="{{item}}">{{item}}
-            </option>
-          </select>
-        </div>
-      </form>
+  <div class="flex flex-col items-center justify-center">
+    <ion-title>SUCCESS RATE</ion-title>
+    <h3>2pt:</h3>
+    <h2>Today: Best:</h2>
+    <h3>3pt:</h3>
+    <h2>Today: Best:</h2>
   </div>
+  <app-practice-form
+  (twoPointRateValue)="twoPointRate($event)"
+  (threePointRateValue)="threePointRate($event)">
+  </app-practice-form>
 </ion-content>
