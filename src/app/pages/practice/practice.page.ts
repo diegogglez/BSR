@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 
@@ -16,18 +16,19 @@ import { PracticeFormComponent } from './practice-form/practice-form.component';
     PracticeFormComponent
   ],
 })
-export class PracticePage implements OnInit {
+export class PracticePage {
+
+  twoPointRateValue: number | null;
+  threePointRateValue: number | null;
+
 
   constructor() {}
 
-  ngOnInit() {
-  }
-
   twoPointRate(rate: any) {
-    console.log('hola', rate);
+    this.twoPointRateValue = rate.toFixed(1);
   }
 
   threePointRate(rate: any) {
-    console.log('hola', rate);
+    this.threePointRateValue = rate.toFixed(1);
   }
 }

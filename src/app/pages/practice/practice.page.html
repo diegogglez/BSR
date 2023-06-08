@@ -1,10 +1,12 @@
 <ion-content [fullscreen]="true">
-  <div class="flex flex-col items-center justify-center">
+  <div 
+    *ngIf="twoPointRateValue && threePointRateValue"
+    class="flex flex-col items-center justify-center">
     <ion-title>SUCCESS RATE</ion-title>
     <h3>2pt:</h3>
-    <h2>Today: Best:</h2>
+    <h2>Today: {{ twoPointRateValue }}% Best:</h2>
     <h3>3pt:</h3>
-    <h2>Today: Best:</h2>
+    <h2>Today: {{ threePointRateValue }}% Best:</h2>
   </div>
   <app-practice-form
   (twoPointRateValue)="twoPointRate($event)"
