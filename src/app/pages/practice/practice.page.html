@@ -1,25 +1,80 @@
 <ion-content [fullscreen]="true">
   <div class="w-full h-full flex justify-center items-end border border-white">
-    <div class="court">
+    <form 
+      [formGroup]="practiceForm" 
+      class="court"
+      (ngSubmit)="onSubmit()">
         <div class="drill-container-1">
-          <button></button>
+          <select formControlName="three-3">
+            <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+            </option>
+          </select>
           <div class="column-container">
+            <select formControlName="three-4">
+              <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+              </option>
+            </select>
             <div class="two-container">
-              <button></button>
-              <button></button>
-              <button></button>
+              <select formControlName="two-4">
+                <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+                </option>
+              </select>
+              <select formControlName="two-3">
+                <option 
+                  *ngFor="let item of drillShoots"
+                  value="{{item}}">{{item}}
+                </option>
+              </select>
+              <select formControlName="two-2">
+                <option 
+                  *ngFor="let item of drillShoots"
+                  value="{{item}}">{{item}}
+                </option>
+              </select>
             </div>
+            <select formControlName="three-2">
+              <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+              </option>
+            </select>
           </div>
         </div>
         <div class="drill-container-2">
-            <button></button>
+          <select formControlName="three-5">
+            <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+            </option>
+          </select>
           <div class="two-container">
-              <button></button>
-              <button></button>
-              <button></button>
+            <select formControlName="two-5">
+              <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+              </option>
+            </select>
+            <button type="submit">submit</button>
+            <select formControlName="two-1">
+              <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+              </option>
+            </select>
           </div>
-            <button></button>
+          <select formControlName="three-1">
+            <option 
+                *ngFor="let item of drillShoots"
+                value="{{item}}">{{item}}
+            </option>
+          </select>
         </div>
-    </div>
+      </form>
   </div>
 </ion-content>

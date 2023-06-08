@@ -16,12 +16,20 @@ ion-content {
   background-repeat: no-repeat;
   background-position: center;
 
+  select {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #132226;
+    border: 3px solid #1D7773;
+  }
+
   button {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: transparent;
-    border: 3px solid #1D7773;
+    background-color: #dc3c3f;
+    font-size: small;
   }
 
     .drill-container-1, .drill-container-2 {
@@ -40,6 +48,7 @@ ion-content {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 40px;
       }
     }
 
