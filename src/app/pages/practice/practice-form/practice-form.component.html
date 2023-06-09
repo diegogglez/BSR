@@ -47,7 +47,7 @@
           {{ item }}
         </option>
       </select>
-      <button type="submit">submit</button>
+      <button type="submit" [disabled]="!practiceForm.valid">submit</button>
       <select formControlName="two1">
         <option *ngFor="let item of drillShootsArr" value="{{ item }}">
           {{ item }}

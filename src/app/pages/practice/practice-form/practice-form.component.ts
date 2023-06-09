@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -26,16 +26,16 @@ export class PracticeFormComponent  implements OnInit {
 
   ngOnInit() {
     this.practiceForm = new FormGroup({
-      two1: new FormControl('0'),
-      two2: new FormControl('0'),
-      two3: new FormControl('0'),
-      two4: new FormControl('0'),
-      two5: new FormControl('0'),
-      three1: new FormControl('0'),
-      three2: new FormControl('0'),
-      three3: new FormControl('0'),
-      three4: new FormControl('0'),
-      three5: new FormControl('0'),
+      two1: new FormControl(null, Validators.required),
+      two2: new FormControl(null, Validators.required),
+      two3: new FormControl(null, Validators.required),
+      two4: new FormControl(null, Validators.required),
+      two5: new FormControl(null, Validators.required),
+      three1: new FormControl(null, Validators.required),
+      three2: new FormControl(null, Validators.required),
+      three3: new FormControl(null, Validators.required),
+      three4: new FormControl(null, Validators.required),
+      three5: new FormControl(null, Validators.required),
     });
   }
 
