@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Practice } from 'src/app/models/practice';
+import { StorageService } from 'src/app/services/storage.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-practice-form',
@@ -19,10 +22,13 @@ export class PracticeFormComponent  implements OnInit {
   @Output() twoPointRateValue = new EventEmitter<number>();
   @Output() threePointRateValue = new EventEmitter<number>();
 
+  private twoPointSuccess: number;
+  private threePointSuccess: number;
+
   practiceForm: FormGroup;
   drillShootsArr: number[] = [0, 1, 2, 3, 4, 5];
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
     this.practiceForm = new FormGroup({
@@ -40,9 +46,8 @@ export class PracticeFormComponent  implements OnInit {
   }
 
   onSubmit() {
-    const formValue = this.practiceForm.value;
-    console.log(formValue);
     this.shootingRate();
+    this.savePractice();
   }
 
   shootingRate() {
@@ -62,7 +67,8 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.threePointRateValue.emit(successRate)     
+    this.twoPointSuccess = successRate
+    this.threePointRateValue.emit(successRate);    
   }
   
   twoPointRate() {
@@ -77,6 +83,23 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.twoPointRateValue.emit(successRate)
+    this.threePointSuccess = successRate;
+    this.twoPointRateValue.emit(successRate);
+  }
+
+  generateDate() {
+    const date = new Date();
+    return date.toLocaleDateString();  
+  }
+
+  async savePractice() {
+    const practice: Practice = {
+      id: uuidv4(),
+      twoPoitRate: this.twoPointSuccess,
+      threePointRate: this.threePointSuccess,
+      date: this.generateDate.toString(),
+    }
+
+    await this.storageService.addPractice(practice);
   }
 }
