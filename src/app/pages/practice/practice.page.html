@@ -5,17 +5,17 @@
       class="flex flex-col items-center justify-center gap-6">
       <ion-title class="text-2xl font-bold">SUCCESS RATE</ion-title>
       <div class="w-full flex flex-col justify-around items-center">
-        <h3 class="font-bold mb-2">2PT</h3>
+        <h3 class="font-bold mb-2">2PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
-          <h2 class="text-xl text-[#F5C096]">Today: {{ twoPointRateValue ? twoPointRateValue + '%' : null }}</h2>
-          <h2 class="text-xl text-[#669288]">Best:</h2>
+          <h2 class="text-xl text-[#F5C096]" *ngIf="twoPointRateValue">Today: {{ twoPointRateValue }}%</h2>
+          <h2 class="text-xl text-[#669288]">Last:</h2>
         </div>
       </div>
       <div class="flex flex-col justify-around items-center">
-        <h3 class="font-bold mb-2">3PT</h3>
+        <h3 class="font-bold mb-2">3PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
-          <h2 class="text-xl text-[#F5C096]">Today: {{ threePointRateValue ? threePointRateValue + '%' : null }}</h2>
-          <h2 class="text-xl text-[#669288]">Best:</h2>
+          <h2 class="text-xl text-[#F5C096]" *ngIf="threePointRateValue">Today: {{ threePointRateValue }}%</h2>
+          <h2 class="text-xl text-[#669288]">Last:</h2>
         </div>
       </div>
     </div>
