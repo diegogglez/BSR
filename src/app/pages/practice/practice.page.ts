@@ -21,7 +21,6 @@ export class PracticePage {
   twoPointRateValue: number | null;
   threePointRateValue: number | null;
 
-
   constructor() {}
 
   twoPointRate(rate: any) {
