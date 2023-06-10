@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { StorageService } from './../../services/storage.service';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -10,11 +11,17 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class HistoryPage implements OnInit {
+export class HistoryPage {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.getHistory();
   }
 
+  async getHistory() {
+    const history = await this.storageService.getPractices();
+    console.log(history);
+    
+  }
 }
