@@ -87,6 +87,26 @@ export class PracticeFormComponent  implements OnInit {
     this.twoPointRateValue.emit(successRate);
   }
 
+  totalRate() {
+    const formValue = this.practiceForm.value;
+    const drillShoots = this.drillShootsArr.length;
+    const success =
+      Number(formValue.two1) +
+      Number(formValue.two2) +
+      Number(formValue.two3) +
+      Number(formValue.two4) +
+      Number(formValue.two5) +
+      Number(formValue.three1) +
+      Number(formValue.three2) +
+      Number(formValue.three3) +
+      Number(formValue.three4) +
+      Number(formValue.three5) ;
+    
+    const totalShoots = drillShoots * 10;
+    const successRate = (success / totalShoots) * 100;
+    return successRate
+  }
+
   generateDate() {
     const date = new Date();
     return date.toLocaleDateString();  
@@ -97,7 +117,8 @@ export class PracticeFormComponent  implements OnInit {
       id: uuidv4(),
       twoPoitRate: this.twoPointSuccess,
       threePointRate: this.threePointSuccess,
-      date: this.generateDate.toString(),
+      totalRate: this.totalRate(),
+      date: this.generateDate(),
     }
 
     await this.storageService.addPractice(practice);
