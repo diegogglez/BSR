@@ -67,8 +67,8 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.twoPointSuccess = successRate
-    this.threePointRateValue.emit(successRate);    
+    this.twoPointSuccess = Math.round(successRate);
+    this.threePointRateValue.emit(Math.round(successRate));    
   }
   
   twoPointRate() {
@@ -83,8 +83,8 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.threePointSuccess = successRate;
-    this.twoPointRateValue.emit(successRate);
+    this.threePointSuccess = Math.round(successRate);
+    this.twoPointRateValue.emit(Math.round(successRate));
   }
 
   totalRate() {
@@ -104,7 +104,7 @@ export class PracticeFormComponent  implements OnInit {
     
     const totalShoots = drillShoots * 10;
     const successRate = (success / totalShoots) * 100;
-    return successRate
+    return Math.round(successRate);
   }
 
   generateDate() {
@@ -115,7 +115,7 @@ export class PracticeFormComponent  implements OnInit {
   async savePractice() {
     const practice: Practice = {
       id: uuidv4(),
-      twoPoitRate: this.twoPointSuccess,
+      twoPointRate: this.twoPointSuccess,
       threePointRate: this.threePointSuccess,
       totalRate: this.totalRate(),
       date: this.generateDate(),
