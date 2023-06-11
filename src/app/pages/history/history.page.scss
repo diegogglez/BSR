@@ -1,4 +1,20 @@
-ion-content {
-  --background: #132226;
+ion-content, ion-item {
+  --background: #1D7773;
   --color: #fff;
+}
+
+ion-item {
+  --background: #132226;
+  --border-radius: 5px;
+}
+
+p {
+  font-size: 12px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
 }

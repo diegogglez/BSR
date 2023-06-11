@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Practice } from 'src/app/models/practice';
 
 @Component({
   selector: 'app-history',
@@ -13,6 +14,8 @@ import { IonicModule } from '@ionic/angular';
 })
 export class HistoryPage {
 
+  public history: Practice[] = [];
+
   constructor(private storageService: StorageService) { }
 
   ionViewWillEnter() {
@@ -20,8 +23,6 @@ export class HistoryPage {
   }
 
   async getHistory() {
-    const history = await this.storageService.getPractices();
-    console.log(history);
-    
+    this.history = await this.storageService.getPractices();
   }
 }
