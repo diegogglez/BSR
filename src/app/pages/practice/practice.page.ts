@@ -35,11 +35,11 @@ export class PracticePage implements OnInit{
     this.history = await this.storageService.getPractices();
   }
 
-  twoPointRate(rate: any) {
+  twoPointRate(rate: number) {
     this.twoPointRateValue = rate;
   }
 
-  threePointRate(rate: any) {
+  threePointRate(rate: number) {
     this.threePointRateValue = rate;
   }
 }
