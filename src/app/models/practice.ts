@@ -1,6 +1,6 @@
 export interface Practice {
   id: string;
-  twoPoitRate: number;
+  twoPointRate: number;
   threePointRate: number;
   totalRate: number;
   date: string;
