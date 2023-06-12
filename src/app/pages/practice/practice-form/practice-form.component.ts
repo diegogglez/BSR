@@ -112,12 +112,31 @@ export class PracticeFormComponent  implements OnInit {
     return date.toLocaleDateString();  
   }
 
+  async getProgress() {
+    const history = await this.storageService.getPractices();
+    if (history.length) {
+      const lastPracticeRate = history[0].totalRate;
+      console.log(lastPracticeRate);
+      const progress = this.totalRate() - lastPracticeRate;
+
+      if (Math.sign(progress) === 1) {
+        return `+${progress}`
+      } else {
+        return `${progress}`;
+      }
+    } else {
+      return null;
+    }
+  }
+
   async savePractice() {
+    this.getProgress();
     const practice: Practice = {
       id: uuidv4(),
       twoPointRate: this.twoPointSuccess,
       threePointRate: this.threePointSuccess,
       totalRate: this.totalRate(),
+      rateProgress: await this.getProgress(),
       date: this.generateDate(),
     }
 
