@@ -25,4 +25,12 @@ export class HistoryPage {
   async getHistory() {
     this.history = await this.storageService.getPractices();
   }
+
+  getSign(value: string): boolean {
+    const valueArr = value.split('');
+    const isPositive = (item: string) => {
+      return item === '+' ? true : false;
+    }
+    return valueArr.some(isPositive);
+  }
 }
