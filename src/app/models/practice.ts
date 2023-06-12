@@ -3,5 +3,6 @@ export interface Practice {
   twoPointRate: number;
   threePointRate: number;
   totalRate: number;
+  rateProgress: string;
   date: string;
 }
