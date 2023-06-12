@@ -1,30 +1,43 @@
 <ion-content [fullscreen]="true">
   <ion-list class="bg-[#1D7773] flex flex-col justify-center items-center px-2 gap-1">
-    <ion-item *ngFor="let item of history, let i = index" class="w-full">
-      <ion-label>
-        <div class="h-16 w-full flex justify-between items-center">
-          <div class="flex flex-col justify-between items-center">
-            <p>2PT</p>
-            <h2>{{ item.twoPointRate }}%</h2>
+    <ion-item-sliding *ngFor="let item of history" (ionSwipe)="presentAlert(item)">
+      <ion-item-options side="start">
+        <ion-item-option
+          expandable
+          class="bg-orange-600 rounded-s-md"
+          (click)="presentAlert(item)">
+          <ion-icon
+            name="trash"
+            slot="icon-only">
+          </ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item class="w-full">
+        <ion-label>
+          <div class="h-16 w-full flex justify-between items-center">
+            <div class="flex flex-col justify-between items-center">
+              <p>2PT</p>
+              <h2>{{ item.twoPointRate }}%</h2>
+            </div>
+            <div class="flex flex-col justify-between items-center">
+              <p>3PT</p>
+              <h2>{{ item.threePointRate }}%</h2>
+            </div>
+            <div class="flex flex-col justify-between items-center">
+              <p>Total</p>
+              <h2>{{ item.totalRate }}%</h2>
+            </div>
+            <div class="flex flex-col justify-between items-center">
+              <p>{{ item.date }}</p>
+              <h2 
+                *ngIf="item.rateProgress" 
+                class="{{getSign(item.rateProgress) ? 'text-green-500' : 'text-orange-600'}}">
+                {{ item.rateProgress }}%
+              </h2>
+            </div>
           </div>
-          <div class="flex flex-col justify-between items-center">
-            <p>3PT</p>
-            <h2>{{ item.threePointRate }}%</h2>
-          </div>
-          <div class="flex flex-col justify-between items-center">
-            <p>Total</p>
-            <h2>{{ item.totalRate }}%</h2>
-          </div>
-          <div class="flex flex-col justify-between items-center">
-            <p>{{ item.date }}</p>
-            <h2 
-              *ngIf="item.rateProgress" 
-              class="{{getSign(item.rateProgress) ? 'text-green-500' : 'text-orange-600'}}">
-              {{ item.rateProgress }}%
-            </h2>
-          </div>
-        </div>
-      </ion-label>
-    </ion-item>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>

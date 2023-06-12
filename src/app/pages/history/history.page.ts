@@ -2,7 +2,7 @@ import { StorageService } from './../../services/storage.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { AlertController, IonicModule } from '@ionic/angular';
 import { Practice } from 'src/app/models/practice';
 
 @Component({
@@ -16,10 +16,30 @@ export class HistoryPage {
 
   public history: Practice[] = [];
 
-  constructor(private storageService: StorageService) { }
+  constructor(
+    private storageService: StorageService,
+    private alertController: AlertController) { }
 
   ionViewWillEnter() {
     this.getHistory();
+  }
+
+  async presentAlert(item: Practice) {
+    const alert = await this.alertController.create({
+      header: 'Do you want to delete this item?',
+      message: 'Once you delete it, there is no going back.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Ok',
+          handler: () => this.deletePractice(item)
+        }
+      ]
+    });
+    await alert.present();
   }
 
   async getHistory() {
@@ -32,5 +52,9 @@ export class HistoryPage {
       return item === '+' ? true : false;
     }
     return valueArr.some(isPositive);
+  }
+
+  async deletePractice(practice: Practice) {
+    await this.storageService.deletePractice(practice);
   }
 }

@@ -25,4 +25,11 @@ export class StorageService {
     console.log(history);
     await Preferences.set({key: 'practices', value: JSON.stringify(history)})
   }
+
+  async deletePractice(practice: Practice) {
+    const history = await this.getPractices();
+    const index = history.findIndex((item: Practice) => item.id === practice.id);
+    history.splice(index, 1);
+    await Preferences.set({key: 'practices', value: JSON.stringify(history)});
+  }
 }
