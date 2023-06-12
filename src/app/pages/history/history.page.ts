@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AlertController, IonicModule } from '@ionic/angular';
 import { Practice } from 'src/app/models/practice';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-history',
@@ -14,6 +15,7 @@ import { Practice } from 'src/app/models/practice';
 })
 export class HistoryPage {
 
+  refreshSuscription: Subscription;
   public history: Practice[] = [];
 
   constructor(
@@ -22,6 +24,9 @@ export class HistoryPage {
 
   ionViewWillEnter() {
     this.getHistory();
+    this.refreshSuscription = this.storageService.refresh.subscribe(() => {
+      this.getHistory();
+    })
   }
 
   async presentAlert(item: Practice) {
