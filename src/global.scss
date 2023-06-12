@@ -29,3 +29,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom alert */
+.custom-alert .alert-wrapper {
+  background: #132226;
+
+  .alert-button {
+    color: #22c55e;
+  }
+
+  .alert-button.alert-button-role-cancel {
+    color:#ea580c;
+  }
+}

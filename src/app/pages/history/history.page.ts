@@ -32,6 +32,7 @@ export class HistoryPage {
   async presentAlert(item: Practice) {
     const alert = await this.alertController.create({
       header: 'Do you want to delete this item?',
+      cssClass: 'custom-alert',
       message: 'Once you delete it, there is no going back.',
       buttons: [
         {
