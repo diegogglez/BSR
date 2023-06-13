@@ -18,7 +18,11 @@ export const routes: Routes = [
       {
         path: 'practice',
         loadComponent: () => import('../practice/practice.page').then((m) => m.PracticePage)
-      }
+      },
+      {
+        path: 'stats',
+        loadComponent: () => import('../stats/stats.page').then((m) => m.StatsPage)
+      },
     ]
   }
 ]
