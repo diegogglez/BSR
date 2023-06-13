@@ -109,7 +109,10 @@ export class PracticeFormComponent  implements OnInit {
 
   generateDate() {
     const date = new Date();
-    return date.toLocaleDateString();  
+    const day = date.toLocaleDateString();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    return `${day} ${hours}:${minutes}`; 
   }
 
   async getProgress() {
