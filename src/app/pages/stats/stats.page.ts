@@ -57,17 +57,23 @@ export class StatsPage implements OnInit {
     const data = await this.storageService.getPractices();
     const twoPointData = []
     const threePointData = []
+    const totalData = []
     data.forEach((item: Practice) => {      
-      const twoPointdataItem = {
+      const twoPointDataItem = {
         x: item.date,
         y: item.twoPointRate
       };
-      const threePointdataItem = {
+      const threePointDataItem = {
         x: item.date,
         y: item.threePointRate
       };      
-      twoPointData.push(twoPointdataItem);
-      threePointData.push(threePointdataItem)
+      const totalDataItem = {
+        x: item.date,
+        y: item.totalRate
+      };      
+      twoPointData.push(twoPointDataItem);
+      threePointData.push(threePointDataItem);
+      totalData.push(totalDataItem)
     })
     console.log(data);
     this.chartOptions.series = [
@@ -79,9 +85,10 @@ export class StatsPage implements OnInit {
         name: '3PT',
         data: threePointData
       },
-    ]
-
-
+      {
+        name: 'TOTAL',
+        data: totalData
+      },
+    ];
   }
-
 }
