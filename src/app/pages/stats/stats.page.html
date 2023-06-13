@@ -1,3 +1,10 @@
 <ion-content [fullscreen]="true">
- 
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [title]="chartOptions.title">
+    </apx-chart>
+  </div>
 </ion-content>
