@@ -1,10 +1,18 @@
 <ion-content [fullscreen]="true">
-  <div id="chart">
-    <apx-chart
-      [series]="chartOptions.series"
-      [chart]="chartOptions.chart"
-      [xaxis]="chartOptions.xaxis"
-      [title]="chartOptions.title">
-    </apx-chart>
+  <div class="w-full h-full flex justify-between items-center px-2">
+    <div class="w-full rounded-md p-2 bg-[#132226]">
+      <apx-chart
+        class="w-full"
+        [series]="chartOptions.series"
+        [colors]="chartOptions.colors"
+        [dataLabels]="chartOptions.dataLabels"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [title]="chartOptions.title"
+        [stroke]="chartOptions.stroke"
+        [states]="chartOptions.states"
+        [tooltip]="chartOptions.tooltip">
+      </apx-chart>
+    </div>
   </div>
 </ion-content>

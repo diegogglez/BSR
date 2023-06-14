@@ -2,15 +2,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ApexAxisChartSeries, ApexChart, ApexTitleSubtitle, ApexXAxis, ChartComponent, NgApexchartsModule } from "ng-apexcharts";
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexResponsive, ApexStates, ApexStroke, ApexTitleSubtitle, ApexTooltip, ApexXAxis, ChartComponent, NgApexchartsModule } from "ng-apexcharts";
 import { StorageService } from 'src/app/services/storage.service';
 import { Practice } from 'src/app/models/practice';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
+  colors: string[];
+  dataLabels: ApexDataLabels;
   chart: ApexChart;
   xaxis: ApexXAxis;
   title: ApexTitleSubtitle;
+  stroke: ApexStroke;
+  states: ApexStates;
+  tooltip: ApexTooltip;
 };
 @Component({
   selector: 'app-stats',
@@ -33,19 +38,65 @@ export class StatsPage implements OnInit {
           data: []
         }
       ],
+      colors: ['#1d7773', '#f5c096', '#dc3c3f'],
+      dataLabels: {
+        enabled: false,
+      },
       chart: {
+        height: '400px',
+        foreColor: 'rgba(255,255,255,0.8)',
+        background: '#132226',
+        dropShadow: {
+          enabled: true,
+          enabledOnSeries: undefined,
+          top: 0,
+          left: 0,
+          blur: 4,
+          color: '#132226',
+          opacity: 0.35
+        },
         toolbar: {
           show: false
         },
-        height: 350,
-        type: "area"
+        type: "line",
+        offsetX: 0,
       },
       title: {
-        text: "test chart"
+        text: "Succes rate progress",
+        align: 'center',
+        margin: 30,
+        floating: false,
+        style: {
+          fontSize:  '20px',
+          fontWeight:  'bold',
+        },
       },
       xaxis: {
-        type: 'category'
+        type: 'category',
+        overwriteCategories: [''],
+        tooltip: {
+          enabled: true
+        }
+      },
+      stroke: {
+        curve: 'smooth',
+        lineCap: 'round',
+        width: 3,
+      },
+      states: {
+        hover: {
+          filter: {
+            type: 'darken'
+          }
+        }
+      },
+      tooltip: {
+        enabled: true,
+        followCursor: true,
+        theme: 'dark'
       }
+
+      
     };
   }
 
@@ -71,9 +122,9 @@ export class StatsPage implements OnInit {
         x: item.date,
         y: item.totalRate
       };      
-      twoPointData.push(twoPointDataItem);
-      threePointData.push(threePointDataItem);
-      totalData.push(totalDataItem)
+      twoPointData.unshift(twoPointDataItem);
+      threePointData.unshift(threePointDataItem);
+      totalData.unshift(totalDataItem)
     })
     console.log(data);
     this.chartOptions.series = [
