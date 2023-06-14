@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
@@ -25,7 +25,9 @@ export class PracticePage implements OnInit{
   public history: Practice[] = [];
 
 
-  constructor(private storageService: StorageService) {}
+  constructor(
+    private storageService: StorageService,
+    private toastController: ToastController) {}
 
   ngOnInit(): void {
     this.getHistory();
@@ -37,9 +39,19 @@ export class PracticePage implements OnInit{
 
   twoPointRate(rate: number) {
     this.twoPointRateValue = rate;
+    this.presentToast('bottom');
   }
 
   threePointRate(rate: number) {
     this.threePointRateValue = rate;
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toastController.create({
+      message: 'Practice successfully saved!',
+      duration: 2000,
+      position: position
+    });
+    await toast.present();
   }
 }

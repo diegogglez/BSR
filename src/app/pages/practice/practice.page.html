@@ -3,19 +3,19 @@
     <!-- *ngIf="twoPointRateValue && threePointRateValue" -->
     <div 
       class="flex flex-col items-center justify-center gap-6">
-      <ion-title class="text-2xl font-bold">SUCCESS RATE</ion-title>
+      <ion-title (click)="presentToast('bottom')" class="text-2xl font-bold">SUCCESS RATE</ion-title>
       <div class="w-full flex flex-col justify-around items-center">
         <h3 class="font-bold mb-2">2PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
           <h2 class="text-xl text-[#F5C096]" *ngIf="twoPointRateValue">Today: {{ twoPointRateValue }}%</h2>
-          <h2 class="text-xl text-[#1D7773]">Last: {{ history[0]?.twoPointRate }}%</h2>
+          <h2 class="text-xl text-[#1D7773]">Last: <span *ngIf="history[0]">{{ history[0].twoPointRate }}%</span></h2>
         </div>
       </div>
       <div class="flex flex-col justify-around items-center">
         <h3 class="font-bold mb-2">3PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
           <h2 class="text-xl text-[#F5C096]" *ngIf="threePointRateValue">Today: {{ threePointRateValue }}%</h2>
-          <h2 class="text-xl text-[#1D7773]">Last: {{ history[0]?.threePointRate }}%</h2>
+          <h2 class="text-xl text-[#1D7773]">Last: <span *ngIf="history[0]">{{ history[0]?.threePointRate }}%</span></h2>
         </div>
       </div>
     </div>
