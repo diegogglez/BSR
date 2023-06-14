@@ -62,7 +62,7 @@ export class StatsPage implements OnInit {
         offsetX: 0,
       },
       title: {
-        text: "Succes rate progress",
+        text: "Succes rate progress (%)",
         align: 'center',
         margin: 30,
         floating: false,
