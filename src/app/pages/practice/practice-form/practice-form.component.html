@@ -47,7 +47,12 @@
           {{ item }}
         </option>
       </select>
-      <button type="submit" [disabled]="!practiceForm.valid">submit</button>
+      <button 
+        type="submit" 
+        [disabled]="!practiceForm.valid" 
+        class="{{ practiceForm.valid ? '' : 'disabled' }}">
+        submit
+      </button>
       <select formControlName="two1">
         <option *ngFor="let item of drillShootsArr" value="{{ item }}">
           {{ item }}

@@ -27,6 +27,15 @@
     font-size: small;
   }
 
+  button.disabled {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #132226;
+    color: #132226;
+    font-size: small;
+  }
+
     .drill-container-1, .drill-container-2 {
       // outline: 1px solid red;
       height: 100%;
