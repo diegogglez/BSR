@@ -27,6 +27,7 @@ export class PracticeFormComponent  implements OnInit {
 
   practiceForm: FormGroup;
   drillShootsArr: number[] = [0, 1, 2, 3, 4, 5];
+  drillShoots: number = this.drillShootsArr.length - 1;
 
   constructor(private storageService: StorageService) { }
 
@@ -57,7 +58,6 @@ export class PracticeFormComponent  implements OnInit {
 
   threePointRate() {
     const formValue = this.practiceForm.value;
-    const drillShoots = this.drillShootsArr.length;
     const success =
       Number(formValue.three1) +
       Number(formValue.three2) +
@@ -65,7 +65,7 @@ export class PracticeFormComponent  implements OnInit {
       Number(formValue.three4) +
       Number(formValue.three5);
 
-    const totalShoots = drillShoots * 5;
+    const totalShoots = this.drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
     this.twoPointSuccess = Math.round(successRate);
     this.threePointRateValue.emit(Math.round(successRate));    
@@ -73,7 +73,6 @@ export class PracticeFormComponent  implements OnInit {
   
   twoPointRate() {
     const formValue = this.practiceForm.value;
-    const drillShoots = this.drillShootsArr.length;
     const success =
       Number(formValue.two1) +
       Number(formValue.two2) +
@@ -81,7 +80,7 @@ export class PracticeFormComponent  implements OnInit {
       Number(formValue.two4) +
       Number(formValue.two5);
 
-    const totalShoots = drillShoots * 5;
+    const totalShoots = this.drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
     this.threePointSuccess = Math.round(successRate);
     this.twoPointRateValue.emit(Math.round(successRate));
@@ -89,7 +88,6 @@ export class PracticeFormComponent  implements OnInit {
 
   totalRate() {
     const formValue = this.practiceForm.value;
-    const drillShoots = this.drillShootsArr.length;
     const success =
       Number(formValue.two1) +
       Number(formValue.two2) +
@@ -102,7 +100,7 @@ export class PracticeFormComponent  implements OnInit {
       Number(formValue.three4) +
       Number(formValue.three5) ;
     
-    const totalShoots = drillShoots * 10;
+    const totalShoots = this.drillShoots * 10;
     const successRate = (success / totalShoots) * 100;
     return Math.round(successRate);
   }
