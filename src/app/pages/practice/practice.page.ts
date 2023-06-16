@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { IonicModule, ToastController } from '@ionic/angular';
+import { AlertController, IonicModule, ModalController, ToastController } from '@ionic/angular';
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
+import { HelpModalComponent } from './help-modal/help-modal.component';
 
 @Component({
   selector: 'app-practice',
@@ -27,7 +28,8 @@ export class PracticePage implements OnInit{
 
   constructor(
     private storageService: StorageService,
-    private toastController: ToastController) {}
+    private toastController: ToastController,
+    private modalController: ModalController) {}
 
   ngOnInit(): void {
     this.getHistory();
@@ -53,5 +55,12 @@ export class PracticePage implements OnInit{
       position: position
     });
     await toast.present();
+  }
+
+  async showTutorial() {
+    const tutorial = await this.modalController.create({
+      component: HelpModalComponent
+    })
+    await tutorial.present();
   }
 }
