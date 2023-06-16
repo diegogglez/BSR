@@ -59,7 +59,9 @@ export class PracticePage implements OnInit{
 
   async showTutorial() {
     const tutorial = await this.modalController.create({
-      component: HelpModalComponent
+      component: HelpModalComponent,
+      breakpoints: [0, 0.5, 0.7, 1],
+      initialBreakpoint: 0.7,
     })
     await tutorial.present();
   }
