@@ -67,7 +67,7 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = this.drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.twoPointSuccess = Math.round(successRate);
+    this.threePointSuccess = Math.round(successRate);
     this.threePointRateValue.emit(Math.round(successRate));    
   }
   
@@ -82,7 +82,7 @@ export class PracticeFormComponent  implements OnInit {
 
     const totalShoots = this.drillShoots * 5;
     const successRate = (success / totalShoots) * 100;
-    this.threePointSuccess = Math.round(successRate);
+    this.twoPointSuccess = Math.round(successRate);
     this.twoPointRateValue.emit(Math.round(successRate));
   }
 
