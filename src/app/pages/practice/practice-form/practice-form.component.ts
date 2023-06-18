@@ -49,6 +49,7 @@ export class PracticeFormComponent  implements OnInit {
   onSubmit() {
     this.shootingRate();
     this.savePractice();
+    this.practiceForm.reset();
   }
 
   shootingRate() {
@@ -117,7 +118,6 @@ export class PracticeFormComponent  implements OnInit {
     const history = await this.storageService.getPractices();
     if (history.length) {
       const lastPracticeRate = history[0].totalRate;
-      console.log(lastPracticeRate);
       const progress = this.totalRate() - lastPracticeRate;
 
       if (Math.sign(progress) === 1) {
@@ -140,7 +140,8 @@ export class PracticeFormComponent  implements OnInit {
       rateProgress: await this.getProgress(),
       date: this.generateDate(),
     }
-
+    console.log(practice);
+    
     await this.storageService.addPractice(practice);
   }
 }
