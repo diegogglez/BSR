@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
 import { v4 as uuidv4 } from 'uuid';
@@ -21,7 +22,8 @@ export class PracticeFormComponent  implements OnInit {
 
   @Output() twoPointRateValue = new EventEmitter<number>();
   @Output() threePointRateValue = new EventEmitter<number>();
-
+  
+  private refreshSuscription: Subscription;
   private twoPointSuccess: number;
   private threePointSuccess: number;
 
@@ -44,12 +46,15 @@ export class PracticeFormComponent  implements OnInit {
       three4: new FormControl(null, Validators.required),
       three5: new FormControl(null, Validators.required),
     });
+
+    this.refreshSuscription = this.storageService.refresh.subscribe(() => {
+      this.practiceForm.reset();
+    })
   }
 
   onSubmit() {
     this.shootingRate();
     this.savePractice();
-    this.practiceForm.reset();
   }
 
   shootingRate() {
@@ -122,7 +127,7 @@ export class PracticeFormComponent  implements OnInit {
 
       if (Math.sign(progress) === 1) {
         return `+${progress}`
-      } else {
+      } else {      
         return `${progress}`;
       }
     } else {

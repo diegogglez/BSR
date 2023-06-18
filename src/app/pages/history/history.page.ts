@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class HistoryPage {
 
-  refreshSuscription: Subscription;
+  private refreshSuscription: Subscription;
   public history: Practice[] = [];
 
   constructor(
