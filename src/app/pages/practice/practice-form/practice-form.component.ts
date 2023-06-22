@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
 import { v4 as uuidv4 } from 'uuid';
+import { DrillSelectComponent } from './drill-select/drill-select.component';
 
 @Component({
   selector: 'app-practice-form',
@@ -16,6 +17,7 @@ import { v4 as uuidv4 } from 'uuid';
     IonicModule, 
     CommonModule, 
     ReactiveFormsModule,
+    DrillSelectComponent
   ],
 })
 export class PracticeFormComponent  implements OnInit {
@@ -148,5 +150,6 @@ export class PracticeFormComponent  implements OnInit {
     console.log(practice);
     
     await this.storageService.addPractice(practice);
+    console.log(this.practiceForm);
   }
 }

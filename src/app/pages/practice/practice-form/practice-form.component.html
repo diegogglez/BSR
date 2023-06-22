@@ -1,68 +1,62 @@
 <form [formGroup]="practiceForm" class="court" (ngSubmit)="onSubmit()">
   <div class="drill-container-1">
-    <select formControlName="three3">
-      <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-        {{ item }}
-      </option>
-    </select>
+    <app-drill-select 
+      formControlName="three3"
+      [selected]="practiceForm.get('three3').value">
+    </app-drill-select>
+
     <div class="column-container">
-      <select formControlName="three4">
-        <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-          {{ item }}
-        </option>
-      </select>
+      <app-drill-select 
+        formControlName="three4"
+        [selected]="practiceForm.get('three4').value">
+      </app-drill-select>
       <div class="two-container">
-        <select formControlName="two4">
-          <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-            {{ item }}
-          </option>
-        </select>
-        <select formControlName="two3">
-          <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-            {{ item }}
-          </option>
-        </select>
-        <select formControlName="two2">
-          <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-            {{ item }}
-          </option>
-        </select>
+        <app-drill-select 
+          formControlName="two4"
+          [selected]="practiceForm.get('two4').value">
+        </app-drill-select>
+        <app-drill-select 
+          formControlName="two3"
+          [selected]="practiceForm.get('two3').value">
+        </app-drill-select>
+        <app-drill-select 
+          formControlName="two2"
+          [selected]="practiceForm.get('two2').value">
+        </app-drill-select>
       </div>
-      <select formControlName="three2">
-        <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-          {{ item }}
-        </option>
-      </select>
+      <app-drill-select 
+        formControlName="three2"
+        [selected]="practiceForm.get('three2').value">
+      </app-drill-select>
     </div>
   </div>
+
   <div class="drill-container-2">
-    <select formControlName="three5">
-      <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-        {{ item }}
-      </option>
-    </select>
+    <app-drill-select 
+      formControlName="three5"
+      [selected]="practiceForm.get('three5').value">
+    </app-drill-select>
+
     <div class="two-container">
-      <select formControlName="two5">
-        <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-          {{ item }}
-        </option>
-      </select>
+      <app-drill-select 
+        formControlName="two5"
+        [selected]="practiceForm.get('two5').value">
+      </app-drill-select>
       <button 
         type="submit" 
         [disabled]="!practiceForm.valid" 
         class="{{ practiceForm.valid ? '' : 'disabled' }}">
         submit
       </button>
-      <select formControlName="two1">
-        <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-          {{ item }}
-        </option>
-      </select>
+      <app-drill-select 
+        formControlName="two1"
+        [selected]="practiceForm.get('two1').value">
+      </app-drill-select>
     </div>
-    <select formControlName="three1">
-      <option *ngFor="let item of drillShootsArr" value="{{ item }}">
-        {{ item }}
-      </option>
-    </select>
+    
+    <app-drill-select 
+      formControlName="three1" 
+      [selected]="practiceForm.get('three1').value">
+    </app-drill-select>
   </div>
 </form>
