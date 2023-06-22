@@ -1,3 +1,16 @@
-<p>
-  drill-select works!
-</p>
+<div class="select-container" (click)="handleClick()">
+  <div class="option-container">
+    <p *ngIf="selected">{{ selected }}</p>
+    <ion-icon *ngIf="!selected" name="chevron-down-outline"></ion-icon>
+  </div>
+  <ion-select
+    (ionChange)="onChange($event)"
+    #drillSelect
+    interface="action-sheet"
+    [interfaceOptions]="{cssClass: 'options'}">
+    <ion-select-option 
+      *ngFor="let item of options">
+      {{ item }}
+    </ion-select-option>
+  </ion-select>
+</div>
