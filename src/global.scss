@@ -52,6 +52,7 @@ ion-toast {
 
 /* Custom select action sheet  */
 
-.options {
-  --background: #1D7773
+ion-action-sheet.options {
+  --background: #1D7773;
+  --button-color: rgba(255,255,255,0.8);
 }
