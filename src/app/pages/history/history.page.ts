@@ -27,6 +27,7 @@ export class HistoryPage {
     this.refreshSuscription = this.storageService.refresh.subscribe(() => {
       this.getHistory();
     })
+    // this.storageService.seed();
   }
 
   async presentAlert(item: Practice) {
