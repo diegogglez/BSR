@@ -96,6 +96,7 @@ This is a basketball practice tracking app based on Stephen Curry's routine. It 
 * [Ionic Framework][IonicFramework-url]
 * [Capacitor Preferences API][Capacitor-preferences-url]
 * [TailwindCSS][Tailwindcss-url]
+* [Apexcharts][Apexcharts-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,5 +186,6 @@ LinkedIn: [https://www.linkedin.com/in/diego-gglez/](https://www.linkedin.com/in
 [Angular-url]: https://angular.io/
 [Tailwindcss-url]: https://tailwindcss.com/
 [Capacitor-preferences-url]: https://capacitorjs.com/docs/apis/preferences
-[IonicFramework-url]:https://ionicframework.com/
+[IonicFramework-url]: https://ionicframework.com/
+[Apexcharts-url]: https://apexcharts.com/
 
