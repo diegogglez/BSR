@@ -1,0 +1,53 @@
+ion-content {
+  --background: rgb(13,23,26);
+  --color: rgba(255,255,255,0.8);
+}
+
+ion-button {
+  --border-color: #F5C096;
+  --color: #F5C096;
+}
+
+p {
+  width: 80%;
+  text-align: center;
+}
+
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-container {
+  width: 100%;
+  height: 85%;
+
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  
+    img {
+      height: 75%;
+      border-radius: 10px;
+    }
+  }
+}
+
+swiper-container::part(bullet-active) {
+  background-color: #F5C096;
+}
+
+swiper-container::part(bullet) {
+  background-color: rgba(245,192,150, 0.3);
+}
+
+

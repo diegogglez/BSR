@@ -5,7 +5,7 @@ import { IonicModule, ModalController, ToastController } from '@ionic/angular';
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
-import { HelpModalComponent } from './help-modal/help-modal.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 @Component({
   selector: 'app-practice',
@@ -16,7 +16,7 @@ import { HelpModalComponent } from './help-modal/help-modal.component';
     IonicModule, 
     CommonModule, 
     ReactiveFormsModule,
-    PracticeFormComponent
+    PracticeFormComponent,
   ],
 })
 export class PracticePage implements OnInit{
@@ -59,9 +59,7 @@ export class PracticePage implements OnInit{
 
   async showTutorial() {
     const tutorial = await this.modalController.create({
-      component: HelpModalComponent,
-      breakpoints: [0, 0.5, 0.7, 1],
-      initialBreakpoint: 0.7,
+      component: TutorialComponent
     })
     await tutorial.present();
   }
