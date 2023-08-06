@@ -1,0 +1,30 @@
+ion-content {
+  --background: rgb(13,23,26);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-container {
+  width: 100%;
+  height: 80%;
+}
+
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    height: 80%;
+    border-radius: 5px;
+  }
+}

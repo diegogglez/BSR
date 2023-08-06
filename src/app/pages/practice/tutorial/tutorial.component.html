@@ -1,3 +1,28 @@
-<p>
-  tutorial works!
-</p>
+<ion-content>
+  <div class="container">
+    <ion-button (click)="onClose()">Got it!</ion-button>
+    <swiper-container
+     [pagination]="true">
+      <swiper-slide>
+        <img src="../../../../assets/img/tutorial-imgs/tutorial-01.png"/>
+        <p>1. First step</p>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="../../../../assets/img/tutorial-imgs/tutorial-02.png"/>
+        <p>2. First step</p>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="../../../../assets/img/tutorial-imgs/tutorial-03.png"/>
+        <p>3. First step</p>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="../../../../assets/img/tutorial-imgs/tutorial-04.png"/>
+        <p>4. First step</p>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="../../../../assets/img/tutorial-imgs/tutorial-05.png"/>
+        <p>5. First step</p>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</ion-content>
