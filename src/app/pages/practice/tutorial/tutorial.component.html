@@ -1,27 +1,40 @@
 <ion-content>
   <div class="container">
-    <ion-button (click)="onClose()">Got it!</ion-button>
+    <ion-button 
+      fill="outline"
+      (click)="onClose()">
+      Got it!
+    </ion-button>
     <swiper-container
+      class="swiper-container"
      [pagination]="true">
       <swiper-slide>
         <img src="../../../../assets/img/tutorial-imgs/tutorial-01.png"/>
-        <p>1. First step</p>
+        <p>
+          Go to a basketball court and try 5 shoots 5 shots from each circled position.
+          You'll see that the submit button appears once you complete the form.
+        </p>
       </swiper-slide>
       <swiper-slide>
         <img src="../../../../assets/img/tutorial-imgs/tutorial-02.png"/>
-        <p>2. First step</p>
+        <p>
+          When you click on Submit, your success rate will be displayed at the top of the screen 
+          and automatically saved on your device memory.
+        </p>
       </swiper-slide>
       <swiper-slide>
         <img src="../../../../assets/img/tutorial-imgs/tutorial-03.png"/>
-        <p>3. First step</p>
+        <p>
+          You can follow your progress in the History page
+        </p>
       </swiper-slide>
       <swiper-slide>
         <img src="../../../../assets/img/tutorial-imgs/tutorial-04.png"/>
-        <p>4. First step</p>
+        <p>You can easily delete items with a swipe gesture on it</p>
       </swiper-slide>
       <swiper-slide>
         <img src="../../../../assets/img/tutorial-imgs/tutorial-05.png"/>
-        <p>5. First step</p>
+        <p>To have a more clear picture of your training progress you can check the Stats page</p>
       </swiper-slide>
     </swiper-container>
   </div>
