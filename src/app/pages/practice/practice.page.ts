@@ -5,7 +5,6 @@ import { IonicModule, ModalController, ToastController } from '@ionic/angular';
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Practice } from 'src/app/models/practice';
 import { StorageService } from 'src/app/services/storage.service';
-import { HelpModalComponent } from './help-modal/help-modal.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 
 @Component({
