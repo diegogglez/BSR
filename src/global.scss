@@ -44,9 +44,9 @@
 }
 
 ion-toast {
-  --background: rgba(19,34,38,0.9);
+  --background: var(--items-bg);
   --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
-  --color: #F5C096;
+  --color: var(--toast-color);
   text-align: center;
 }
 

@@ -51,7 +51,7 @@ export class PracticePage implements OnInit{
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toastController.create({
       message: 'Practice successfully saved!',
-      duration: 2000,
+      duration: 1500,
       position: position
     });
     await toast.present();
