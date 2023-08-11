@@ -62,6 +62,8 @@ export class StorageService {
       const defaulTheme: string = 'bsr-original';
       await Preferences.set({key: 'theme', value: defaulTheme});
     }
+    
+    return theme;
   }
 
   async setTheme(theme: string) {
