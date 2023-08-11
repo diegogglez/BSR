@@ -3,7 +3,7 @@
     class="text-center mt-5 text-base"
     *ngIf="!history.length">*You haven't saved any practices yet!
   </ion-title>
-  <ion-list class="bg-[#1D7773] flex flex-col justify-center items-center px-2 gap-1">
+  <ion-list class="flex flex-col justify-center items-center px-2 gap-1">
     <ion-item-sliding *ngFor="let item of history" (ionSwipe)="presentAlert(item)">
       <ion-item-options side="start">
         <ion-item-option

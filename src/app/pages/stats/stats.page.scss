@@ -1,7 +1,9 @@
 ion-content {
-  --background: #1D7773;
+  --background: var(--main);
   --color: #fff;
 }
 
-/* dark-blue: #132226 */
+.chart {
+  background-color: var(--items-bg);
+}
 

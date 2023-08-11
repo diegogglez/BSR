@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">settings</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="w-full h-full flex flex-col justify-center items-center gap-10">
+    <section>
+      <ion-list-header>theme</ion-list-header>
+    </section>
+    <section class="themes-container">
+      <div 
+        class="flex flex-col items-center justify-center gap-2"
+        *ngFor="let item of themes" 
+        (click)="setTheme(item.class)">
+        <div class="theme" [ngClass]="item.class">
+          <div class="item-skeleton-container">
+            <div class="item-skeleton"></div>
+            <div class="item-skeleton"></div>
+            <div class="item-skeleton"></div>
+          </div>
+          <div class="tab-skeleton">
+            <!-- <div class="tab-skeleton-button"></div> -->
+            <p>{{ item.themeName }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </ion-content>

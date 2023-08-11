@@ -1,11 +1,15 @@
-ion-content, ion-item {
-  --background: #1D7773;
+ion-content {
+  --background: var(--main);
   --color: rgba(255,255,255,0.8);
 }
 
 ion-item {
-  --background: #132226;
+  --background: var(--items-bg);
   --border-radius: 6px;
+}
+
+ion-list {
+  background-color: var(--main);
 }
 
 p {

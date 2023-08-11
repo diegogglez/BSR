@@ -1,5 +1,10 @@
 ion-content {
-  --background: #132226;
+  --background: var(--court);
   --color: rgba(255,255,255,0.8);
+  height: 100%;
+}
+
+ion-list {
+  background-color: var(--item-bg);
 }
 
