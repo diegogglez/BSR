@@ -7,16 +7,19 @@ ion-item {
   --background: var(--items-bg);
 }
 
-/* section {
-  background-color: var(--items-bg);
-} */
-
 ion-toolbar {
-  --background: #132226
+  --background: var(--tabs);
+  --color: var(--select-bg);
+
+  h2 {
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 .themes-container {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
