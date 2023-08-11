@@ -234,3 +234,82 @@
     --ion-card-background: #1e1e1e;
   }
 }
+
+//? BSR THEMES
+
+.bsr-original {
+  --court: #132226;
+  --court-svg: url('../../../../assets/img/courts/court-bsr-original.svg');
+  --main: #1D7773;
+  --tabs: #F5C096;
+  --select-bg: #132226;
+  --select-border: #1D7773;
+  --items-bg: #132226;
+  --hide-submit: #132226;
+}
+
+.chicago-bulls {
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-chicago-bulls.svg');
+  --main: #cf093f;
+  --tabs: #000000;
+  --select-bg: #ffffff;
+  --select-border: #000000;
+  --items-bg: #000000;
+  --hide-submit: #cf093f;
+}
+
+.angeles-lakers {
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-angeles-lakers.svg');
+  --main: #fdba21;
+  --tabs: #552084;
+  --select-bg: #ffffff;
+  --select-border: #552084;
+  --items-bg: #552084;
+  --hide-submit: #fdba21;
+}
+
+.boston-celtics {
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-boston-celtics.svg');
+  --main: #008853;
+  --tabs: #2a3236;
+  --select-bg: #bc9a5c;
+  --select-border: #2a3236;
+  --items-bg: #2a3236;
+  --hide-submit: #008853;
+}
+
+.golden-state-warriors { 
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-golden-state-warriors.svg');
+  --main: #0d64f2;
+  --tabs: #06337d;
+  --select-bg: #e1c466;
+  --select-border: #06337d;
+  --items-bg: #06337d;
+  --hide-submit: #0d64f2;
+}
+
+.miami-heat-vice {
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-miami-heat-vice.svg');
+  --main: #38b4c8;
+  --tabs: #2f2f2f;
+  --select-bg: #ee8ee5;
+  --select-border: #2f2f2f;
+  --items-bg: #2f2f2f;
+  --hide-submit: #38b4c8;
+}
+
+.charlotte-hornets {
+  --court: #F5C096;
+  --court-svg: url('../../../../assets/img/courts/court-charlotte-hornets.svg');
+  --main: #00798d;
+  --tabs: #170960;
+  --select-bg: #ffffff;
+  --select-border: #170960;
+  --items-bg: #170960;
+  --hide-submit: #00798d;
+}
