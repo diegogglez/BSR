@@ -1,5 +1,31 @@
 ion-content {
-  --background: #132226;
+  --background: var(--court);
   --color: rgba(255,255,255,0.8);
+  height: 100%;
 }
 
+ion-icon {
+  color: var(--select-border);
+}
+
+h1, h3 {
+  color: var(--tabs);
+}
+
+.last {
+  background-color: var(--tabs);
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px var(--tabs);
+  color: var(--main);
+  font-weight: bold;
+}
+
+.today {
+  background-color: var(--main);
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px var(--main);
+  color: var(--tabs);
+  font-weight: bold;
+}

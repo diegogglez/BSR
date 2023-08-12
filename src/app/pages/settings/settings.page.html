@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <h2>Theme settings</h2>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="w-full h-full flex flex-col justify-start items-center gap-10">
+    <section class="themes-container">
+      <div 
+        class="flex flex-col items-center justify-center gap-2"
+        *ngFor="let item of themes" 
+        (click)="setTheme(item.class)">
+        <div class="theme" [ngClass]="item.class">
+          <div class="item-skeleton-container">
+            <div class="item-skeleton"></div>
+            <div class="item-skeleton"></div>
+            <div class="item-skeleton"></div>
+          </div>
+          <div class="tab-skeleton">
+            <!-- <div class="tab-skeleton-button"></div> -->
+            <p>{{ item.themeName }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</ion-content>

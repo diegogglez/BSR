@@ -4,8 +4,12 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #132226;
-  border: 3px solid #1D7773;
+  background-color: var(--select-bg);
+  border: 3px solid var(--select-border);
+
+  ion-icon {
+    color: var(--select-border);
+  }
 
   ion-select {
     visibility: hidden;  
@@ -14,6 +18,7 @@
   }
 
   .option-container {
+    color: var(--select-border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,5 +28,9 @@
     left: 0;
     bottom: 0;
     right: 0; 
+
+    p {
+      font-weight: bolder;
+    }
   }
 }

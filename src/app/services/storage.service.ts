@@ -52,4 +52,22 @@ export class StorageService {
     await Preferences.set({key: 'practices', value: JSON.stringify(history)})
       .then(() => this.refresh$.next());
   }
+
+  //? Theme settings
+
+  async getTheme() {
+    const theme = await Preferences.get({key: 'theme'});
+
+    if (!theme.value) {
+      const defaulTheme: string = 'bsr-original';
+      await Preferences.set({key: 'theme', value: defaulTheme});
+    }
+    
+    return theme;
+  }
+
+  async setTheme(theme: string) {
+    await Preferences.set({key: 'theme', value: theme})
+      .then(() => this.refresh$.next());
+  }
 }

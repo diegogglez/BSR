@@ -38,21 +38,20 @@ export class StatsPage implements OnInit {
           data: []
         }
       ],
-      colors: ['#1d7773', '#f5c096', '#dc3c3f'],
+      colors: ['#22c55e', '#f5c096', '#ea580c'],
       dataLabels: {
         enabled: false,
       },
       chart: {
         height: '400px',
         foreColor: 'rgba(255,255,255,0.8)',
-        background: '#132226',
+        background: 'var(--items-bg)',
         dropShadow: {
           enabled: true,
           enabledOnSeries: undefined,
           top: 0,
           left: 0,
           blur: 4,
-          color: '#132226',
           opacity: 0.35
         },
         toolbar: {

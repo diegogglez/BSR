@@ -6,7 +6,7 @@
   width: 390px;
   height: 550px;
   // outline: 1px solid red;
-  background-image: url("../../../../assets/img/court-template-03.svg");
+  background-image: var(--court-svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -15,8 +15,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #132226;
-    border: 3px solid #1D7773;
+    background-color: var(--select-bg);
+    border: 3px solid var(--select-border);
   }
 
   button {
@@ -31,8 +31,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: #132226;
-    color: #132226;
+    background-color: var(--hide-submit);
+    color: var(--hide-submit);
     font-size: small;
   }
 

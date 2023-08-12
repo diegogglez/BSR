@@ -1,29 +1,31 @@
 <ion-content>
-  <div class="h-full w-full flex flex-col justify-center items-center pt-10">
+  <section class="w-full flex flex-col justify-center items-center pt-5">
     <!-- *ngIf="twoPointRateValue && threePointRateValue" -->
     <div 
       class="flex flex-col items-center justify-center gap-6">
       <section class="flex justify-center items-center gap-2">
         <h1 class="text-2xl font-bold">SUCCESS RATE</h1>
-        <img 
-          class="w-5" 
-          src="../../../assets/icons/help.svg"
+        <ion-icon 
+          name="help-circle-outline" 
+          slot="icon-only"
+          size="large" 
           (click)="showTutorial()">
+        </ion-icon>
       </section>
-      <div class="w-full flex flex-col justify-around items-center">
+      <div class="w-full flex flex-col justify-around items-center gap-2">
         <h3 class="font-bold mb-2">2PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
-          <h2 class="text-xl text-[#F5C096]" *ngIf="twoPointRateValue">Today: {{ twoPointRateValue }}%</h2>
-          <h2 class="text-xl text-[#F5C096]" *ngIf="twoPointRateValue === 0">Today: {{ twoPointRateValue }}%</h2>
-          <h2 class="text-xl text-[#1D7773]">Last: <span *ngIf="history[0]">{{ history[0].twoPointRate }}%</span></h2>
+          <h2 class="text-xl today" *ngIf="twoPointRateValue">Today: {{ twoPointRateValue }}%</h2>
+          <h2 class="text-xl today" *ngIf="twoPointRateValue === 0">Today: {{ twoPointRateValue }}%</h2>
+          <h2 class="text-xl last">Last: <span *ngIf="history[0]">{{ history[0].twoPointRate }}%</span></h2>
         </div>
       </div>
-      <div class="flex flex-col justify-around items-center">
+      <div class="flex flex-col justify-around items-center gap-2">
         <h3 class="font-bold mb-2">3PT AREA</h3>
         <div class="w- full flex justify-center items-center gap-8">
-          <h2 class="text-xl text-[#F5C096]" *ngIf="threePointRateValue">Today: {{ threePointRateValue }}%</h2>
-          <h2 class="text-xl text-[#F5C096]" *ngIf="threePointRateValue === 0">Today: {{ threePointRateValue }}%</h2>
-          <h2 class="text-xl text-[#1D7773]">Last: <span *ngIf="history[0]">{{ history[0]?.threePointRate }}%</span></h2>
+          <h2 class="text-xl today" *ngIf="threePointRateValue">Today: {{ threePointRateValue }}%</h2>
+          <h2 class="text-xl today" *ngIf="threePointRateValue === 0">Today: {{ threePointRateValue }}%</h2>
+          <h2 class="text-xl last">Last: <span *ngIf="history[0]">{{ history[0]?.threePointRate }}%</span></h2>
         </div>
       </div>
     </div>
@@ -31,5 +33,5 @@
     (twoPointRateValue)="twoPointRate($event)"
     (threePointRateValue)="threePointRate($event)">
     </app-practice-form>
-  </div>
+  </section>
 </ion-content>

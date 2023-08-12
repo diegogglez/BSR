@@ -1,8 +1,8 @@
 ion-tab-bar {
-  --background: #F5C096
+  --background: var(--tabs);
 }
 
 ion-tab-button {
-  --color-selected: #132226;
-  --color: #132226;
+  --color-selected: var(--main);
+  --color: var(--select-bg);
 }
