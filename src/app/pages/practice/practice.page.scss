@@ -1,6 +1,5 @@
 ion-content {
   --background: var(--court);
-  --color: rgba(255,255,255,0.8);
   height: 100%;
 }
 
@@ -9,7 +8,7 @@ ion-icon {
 }
 
 h1, h3 {
-  color: var(--tabs);
+  color: var(--titles);
 }
 
 .last {
