@@ -14,6 +14,10 @@ ion-content {
   --color: rgba(255,255,255,0.8);
 }
 
+ion-title {
+  --color: var(--titles)
+}
+
 ion-item {
   --background: var(--items-bg);
   --border-radius: 6px;
