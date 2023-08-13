@@ -1,7 +1,7 @@
-import { seed } from './../../utils/seed';
+import { seed } from './../../../utils/seed';
 import { Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
-import { Practice } from '../models/practice';
+import { Practice } from '../../models/practice';
 import { Subject } from 'rxjs'
 
 @Injectable({

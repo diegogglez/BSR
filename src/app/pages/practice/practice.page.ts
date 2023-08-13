@@ -1,11 +1,10 @@
+import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule, ModalController, ToastController } from '@ionic/angular';
-import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Practice } from 'src/app/models/practice';
-import { StorageService } from 'src/app/services/storage.service';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-practice',
@@ -15,7 +14,6 @@ import { TutorialComponent } from './tutorial/tutorial.component';
   imports: [
     IonicModule, 
     CommonModule, 
-    ReactiveFormsModule,
     PracticeFormComponent,
   ],
 })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { StorageService } from './services/storage.service';
+import { StorageService } from './services/storage/storage.service';
 import { CommonModule } from '@angular/common';
 import { TutorialComponent } from './pages/practice/tutorial/tutorial.component';
 

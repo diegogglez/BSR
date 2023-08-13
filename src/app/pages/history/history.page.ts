@@ -1,4 +1,4 @@
-import { StorageService } from './../../services/storage.service';
+import { StorageService } from './../../services/storage/storage.service';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

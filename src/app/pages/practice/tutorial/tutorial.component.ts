@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { IonicModule, ModalController } from '@ionic/angular';
-import { StorageService } from 'src/app/services/storage.service';
+import { StorageService } from 'src/app/services/storage/storage.service';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements

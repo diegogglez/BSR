@@ -1,8 +1,8 @@
-import { StorageService } from 'src/app/services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-settings',

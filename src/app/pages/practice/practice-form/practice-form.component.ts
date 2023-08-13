@@ -4,9 +4,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { IonicModule } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { Practice } from 'src/app/models/practice';
-import { StorageService } from 'src/app/services/storage.service';
 import { v4 as uuidv4 } from 'uuid';
 import { DrillSelectComponent } from './drill-select/drill-select.component';
+import { StorageService } from 'src/app/services/storage/storage.service';
 
 @Component({
   selector: 'app-practice-form',

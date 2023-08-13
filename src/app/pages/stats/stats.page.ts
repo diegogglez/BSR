@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexResponsive, ApexStates, ApexStroke, ApexTitleSubtitle, ApexTooltip, ApexXAxis, ChartComponent, NgApexchartsModule } from "ng-apexcharts";
-import { StorageService } from 'src/app/services/storage.service';
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexStates, ApexStroke, ApexTitleSubtitle, ApexTooltip, ApexXAxis, ChartComponent, NgApexchartsModule } from "ng-apexcharts";
+import { StorageService } from 'src/app/services/storage/storage.service';
 import { Practice } from 'src/app/models/practice';
 
 export type ChartOptions = {
