@@ -248,6 +248,7 @@
   --hide-submit: #132226;
   --toast-color: #F5C096;
   --titles: rgba(255,255,255,0.8);
+  --motivation-bg: rgba(19, 34, 38, 0.9);
 }
 
 .chicago-bulls {
@@ -261,6 +262,7 @@
   --hide-submit: #cf093f;
   --toast-color: #cf093f;
   --titles: #000000;
+  --motivation-bg: rgba(0, 0, 0, 0.9);
 }
 
 .angeles-lakers {
@@ -273,7 +275,8 @@
   --items-bg: #552084;
   --hide-submit: #fdba21;
   --toast-color: #fdba21; 
-  --titles: #552084; 
+  --titles: #552083; 
+  --motivation-bg: rgba(85, 32, 132, 0.9);
 }
 
 .boston-celtics {
@@ -287,6 +290,7 @@
   --hide-submit: #008853;
   --toast-color: #bc9a5c;
   --titles: #2a3236; 
+  --motivation-bg: rgba(42, 50, 54, 0.9);
   
 }
 
@@ -301,6 +305,7 @@
   --hide-submit: #0d64f2;
   --toast-color: #e1c466;
   --titles: #06337d; 
+  --motivation-bg: rgba(6, 52, 125, 0.9);
 }
 
 .miami-heat-vice {
@@ -314,6 +319,7 @@
   --hide-submit: #38b4c8;
   --toast-color: #ee8ee5;
   --titles: #2f2f2f; 
+  --motivation-bg: rgba(47, 47, 47, 0.9);
 }
 
 .charlotte-hornets {
@@ -327,4 +333,5 @@
   --hide-submit: #00798d;
   --toast-color: #00798d;
   --titles: #170960; 
+  --motivation-bg: rgba(23, 9, 96, 0.9);
 }
