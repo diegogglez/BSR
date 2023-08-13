@@ -1,3 +1,14 @@
+ion-toolbar {
+  --background: var(--tabs);
+  --color: var(--select-bg);
+
+  h2 {
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
 ion-content {
   --background: var(--main);
   --color: rgba(255,255,255,0.8);

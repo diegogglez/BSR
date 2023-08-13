@@ -1,10 +1,21 @@
+ion-toolbar {
+  --background: var(--tabs);
+  --color: var(--select-bg);
+
+  h2 {
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
 ion-content {
   --background: var(--court);
   height: 100%;
 }
 
 ion-icon {
-  color: var(--select-border);
+  color: var(--select-bg);
 }
 
 h1, h3 {
