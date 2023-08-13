@@ -20,13 +20,11 @@ ion-toolbar {
 
 .themes-container {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 120px 120px;
+  justify-content: center;
+  grid-gap: 40px;
+  padding: 40px;
 
   .theme {
     width: 120px;
@@ -45,9 +43,6 @@ ion-toolbar {
       padding: 10px 10px 0px 10px;
       border-radius: 10px 10px 0px 0px;
       background-color: var(--main);
-      // border-top: 2px solid var(--items-bg);
-      // border-left: 2px solid var(--items-bg);
-      // border-right: 2px solid var(--items-bg);
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -70,9 +65,6 @@ ion-toolbar {
       width: 100%;
       border-radius: 0px 0px 10px 10px;
       background-color: var(--tabs);
-      // border-bottom: 2px solid var(--items-bg);
-      // border-left: 2px solid var(--items-bg);
-      // border-right: 2px solid var(--items-bg);
 
       p {
         font-weight: bold;
