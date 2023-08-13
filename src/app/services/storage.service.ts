@@ -10,7 +10,8 @@ import { Subject } from 'rxjs'
 export class StorageService {
 
   private refresh$ = new Subject<void>();
-  seedarr = seed
+  seedarr = seed;
+  showTutorial: boolean = true;
 
   get refresh() {
     return this.refresh$;
@@ -26,6 +27,8 @@ export class StorageService {
     await Preferences.set({key: 'practices', value: JSON.stringify(seed)});  
     console.log('semilla lanzada con éxito'); 
   }
+
+  //? Practice storage
 
   async getPractices() {
     const history = await Preferences.get({key: 'practices'});
@@ -69,5 +72,22 @@ export class StorageService {
   async setTheme(theme: string) {
     await Preferences.set({key: 'theme', value: theme})
       .then(() => this.refresh$.next());
+  }
+
+  //? Tutorial settings
+
+  async getTutorialSettings() {
+    const ShouldShowTutorial = await Preferences.get({key: 'showTutorial'});
+    if (!ShouldShowTutorial.value) {
+      const defaultState: string = 'true';
+      await Preferences.set({key: 'showTutorial', value: defaultState});
+    }
+    return ShouldShowTutorial;
+  }
+
+  async updateTutorialSettings() {
+    await Preferences.set({key: 'showTutorial', value: 'false'});
+    console.log('updated');
+    
   }
 }
