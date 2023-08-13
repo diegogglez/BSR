@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { StorageService } from './services/storage/storage.service';
 import { CommonModule } from '@angular/common';
-import { TutorialComponent } from './pages/practice/tutorial/tutorial.component';
+import { TutorialService } from './services/tutorial/tutorial.service';
 
 @Component({
   selector: 'app-root',
@@ -14,38 +14,19 @@ import { TutorialComponent } from './pages/practice/tutorial/tutorial.component'
 export class AppComponent implements OnInit {
 
   public theme: string = 'bsr-original';
-  public tutorial: string = 'true';
 
-  constructor(private storageService: StorageService, private modalController: ModalController) {}
+  constructor(
+    private storageService: StorageService, 
+    private tutorialService: TutorialService
+  ) {}
 
   ngOnInit() {
     this.getTheme();
-    this.shouldShowTutorial();
+    this.tutorialService.shouldShowTutorial();
   }
 
   async getTheme() {
     const theme = await this.storageService.getTheme();
-    this.theme = theme.value;   
-    console.log(theme);
-    
-  }
-
-  async shouldShowTutorial() {
-    const tutorial = await this.storageService.getTutorialSettings();
-    if (tutorial.value) {
-      this.tutorial = tutorial.value; 
-    }
-    console.log(this.tutorial);
-     
-    if(this.tutorial === 'true') {
-      this.showTutorial();
-    }
-  }
-
-  async showTutorial() {
-    const tutorial = await this.modalController.create({
-      component: TutorialComponent
-    })
-    await tutorial.present();
+    this.theme = theme.value;
   }
 }

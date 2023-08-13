@@ -1,10 +1,10 @@
 import { PracticeFormComponent } from './practice-form/practice-form.component';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule, ModalController, ToastController } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 import { Practice } from 'src/app/models/practice';
-import { TutorialComponent } from './tutorial/tutorial.component';
 import { StorageService } from 'src/app/services/storage/storage.service';
+import { TutorialService } from 'src/app/services/tutorial/tutorial.service';
 
 @Component({
   selector: 'app-practice',
@@ -17,7 +17,7 @@ import { StorageService } from 'src/app/services/storage/storage.service';
     PracticeFormComponent,
   ],
 })
-export class PracticePage implements OnInit{
+export class PracticePage implements OnInit {
 
   public twoPointRateValue: number | null;
   public threePointRateValue: number | null;
@@ -27,7 +27,8 @@ export class PracticePage implements OnInit{
   constructor(
     private storageService: StorageService,
     private toastController: ToastController,
-    private modalController: ModalController) {}
+    private tutorialService: TutorialService
+  ) {}
 
   ngOnInit(): void {
     this.getHistory();
@@ -56,9 +57,6 @@ export class PracticePage implements OnInit{
   }
 
   async showTutorial() {
-    const tutorial = await this.modalController.create({
-      component: TutorialComponent
-    })
-    await tutorial.present();
+    this.tutorialService.showTutorial();
   }
 }

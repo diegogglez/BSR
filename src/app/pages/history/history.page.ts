@@ -20,7 +20,8 @@ export class HistoryPage {
 
   constructor(
     private storageService: StorageService,
-    private alertController: AlertController) { }
+    private alertController: AlertController
+  ) {}
 
   ionViewWillEnter() {
     this.getHistory();

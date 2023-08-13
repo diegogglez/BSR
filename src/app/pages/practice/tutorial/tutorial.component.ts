@@ -23,7 +23,7 @@ export class TutorialComponent  implements OnInit {
   constructor(
     private modalController: ModalController,
     private storageService: StorageService
-    ) { }
+  ) { }
 
   ngOnInit() {}
 
