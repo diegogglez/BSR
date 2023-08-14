@@ -72,7 +72,7 @@ export class DrillSelectComponent implements ControlValueAccessor{
     const toast = await this.toastController.create({
       message: this.options[value].message,
       duration: 1000,
-      position: 'middle',
+      position: 'bottom',
       cssClass: 'motivation'
     });
     await toast.present();
